@@ -10,8 +10,8 @@ namespace NunitAPIUser.src.TestData
         {
             get
             {
-                yield return new TestCaseData("Anderson Teste", "testesucess@gmail.com", "testesucess", HttpStatusCode.OK, "Usuário cadastrado com sucesso!").SetName("RegistrationWithAllFieldsCorrectlyFilled");
-                yield return new TestCaseData("Anderson Teste", "testesucess@gmail.com", "testesucess", HttpStatusCode.BadRequest, "E-mail já cadastrado.").SetName("EmailAlreadyRegistered");
+                yield return new TestCaseData("Anderson Teste", "testevasc@gmail.com", "testesucess", HttpStatusCode.OK, "Usuário cadastrado com sucesso!").SetName("RegistrationWithAllFieldsCorrectlyFilled");
+                yield return new TestCaseData("Anderson Teste", "testevasc@gmail.com", "testesucess", HttpStatusCode.BadRequest, "E-mail já cadastrado.").SetName("EmailAlreadyRegistered");
                 yield return new TestCaseData("", "teste@gmail.com", "testees", HttpStatusCode.BadRequest, "O campo 'FullName' é obrigatório.").SetName("FullNameIsRequired");
                 yield return new TestCaseData("Anderson Vasc", "", "testees", HttpStatusCode.BadRequest, "O campo 'Email' é obrigatório.").SetName("EmailIsRequired");
                 yield return new TestCaseData("Anderson Vasc", "teste@gmail.com", "", HttpStatusCode.BadRequest, "O campo 'Password' é obrigatório.").SetName("PasswordIsRequired");

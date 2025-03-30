@@ -6,12 +6,13 @@ using NUnit.Framework;
 using RestSharp;
 using System.Threading.Tasks;
 using NunitAPIUser.src.TestData;
+using NunitAPIUser.src.Helpers;
 
 namespace NunitAPIUser.src.Tests
 {
     public class AppSettings
     {
-        public string ApiUrl { get; set; }
+        public required string ApiUrl { get; set; }
     }
 
     [TestFixture]
@@ -29,7 +30,12 @@ namespace NunitAPIUser.src.Tests
         private AppSettings LoadAppSettings()
         {
             var json = File.ReadAllText("appsettings.json");
-            return JsonSerializer.Deserialize<AppSettings>(json);
+            var appSettings = JsonSerializer.Deserialize<AppSettings>(json);
+            if (appSettings == null)
+            {
+                throw new InvalidOperationException("Failed to load appsettings.json.");
+            }
+            return appSettings;
         }
 
         [SetUp]
@@ -86,6 +92,12 @@ namespace NunitAPIUser.src.Tests
 
             Assert.That(response.StatusCode, Is.EqualTo(expectedStatusCode));
             Assert.That(response.Content != null && response.Content.Contains(expectedMessage), Is.True, $"Expected message: {expectedMessage}, but got: {response.Content}");
+
+            if (expectedStatusCode == HttpStatusCode.OK && expectedMessage == "Usuário cadastrado com sucesso!")
+            {
+                bool userExists = DatabaseHelper.UserExists(email);
+                Assert.That(userExists, Is.True, "The user should exist in the database after successful registration.");
+            }
         }
     }
 }
