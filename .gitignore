@@ -1,0 +1,34 @@
+# Ignorar arquivos .json
+*.json
+
+# Ignorar a pasta .vs
+.vs/
+
+# Ignorar a pasta bin/ e obj/ (geralmente usadas em projetos .NET)
+bin/
+obj/
+
+# Ignorar a pasta do Visual Studio Code (VSCode)
+.vscode/
+
+# Ignorar a pasta do npm (node_modules)
+node_modules/
+
+# Ignorar arquivos de configuração do sistema operacional (exemplo para macOS)
+.DS_Store
+
+# Ignorar arquivos temporários criados por editores de texto
+*~
+*.swp
+
+# Ignorar arquivos de log
+*.log
+
+# Ignorar arquivos gerados por compilação
+*.class
+*.o
+*.out
+
+# Ignorar arquivos de backup do sistema
+Thumbs.db
+ehthumbs.db
