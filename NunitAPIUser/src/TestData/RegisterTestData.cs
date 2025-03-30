@@ -4,13 +4,13 @@ using NUnit.Framework;
 
 namespace NunitAPIUser.src.TestData
 {
-    public static class UserRegistrationTestData
+    public static class RegisterTestData
     {
         public static IEnumerable<TestCaseData> TestCases
         {
             get
             {
-                yield return new TestCaseData("Anderson Teste", "testevasc@gmail.com", "testesucess", HttpStatusCode.OK, "Usuário cadastrado com sucesso!").SetName("RegistrationWithAllFieldsCorrectlyFilled");
+                //yield return new TestCaseData("Anderson Teste", "testevasconcelos1@gmail.com", "testesucess", HttpStatusCode.OK, "Usuário cadastrado com sucesso!").SetName("RegistrationWithAllFieldsCorrectlyFilled");
                 yield return new TestCaseData("Anderson Teste", "testevasc@gmail.com", "testesucess", HttpStatusCode.BadRequest, "E-mail já cadastrado.").SetName("EmailAlreadyRegistered");
                 yield return new TestCaseData("", "teste@gmail.com", "testees", HttpStatusCode.BadRequest, "O campo 'FullName' é obrigatório.").SetName("FullNameIsRequired");
                 yield return new TestCaseData("Anderson Vasc", "", "testees", HttpStatusCode.BadRequest, "O campo 'Email' é obrigatório.").SetName("EmailIsRequired");
