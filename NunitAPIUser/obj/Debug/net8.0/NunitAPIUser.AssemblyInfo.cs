@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("NunitAPIUser")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2371e12cba4f78e71f4a4881c047a26af2ada27a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9a24956ebad4e1cf47da124eb4dd89e6f0bc00e6")]
 [assembly: System.Reflection.AssemblyProductAttribute("NunitAPIUser")]
 [assembly: System.Reflection.AssemblyTitleAttribute("NunitAPIUser")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

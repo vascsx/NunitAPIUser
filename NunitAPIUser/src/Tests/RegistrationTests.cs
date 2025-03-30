@@ -81,7 +81,7 @@ namespace NunitAPIUser.src.Tests
         [TestCaseSource(typeof(RegisterTestData), nameof(RegisterTestData.TestCases))]
         public async Task ShouldReturnExpectedResultRegister(string fullName, string email, string password, HttpStatusCode expectedStatusCode, string expectedMessage)
         {
-            var newUser = new
+            var newUser = new   
             {
                 fullName,
                 email,
